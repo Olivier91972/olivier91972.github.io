@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="À Propos | Olivier Remy" description="About Jeanine White Lorem Ipsum">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="À Propos"
+				tagline="Merci d'être passé. Lisez ci-dessous pour en savoir plus sur moi et mon parcours."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Collègues qui se checkent au dessus de leurs ordinateurs portable, au travail"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Activités</h2>
+				<div class="content">
+					<p>
+						Responsable Produit
+						<br>- 2005 à 2017
+					</p>
+					<br>
+					<p>
+						Concepteur développeur d'application Python
+						<br>- 2022 à 2023
+					</p>
+					<br>
+					<p>
+						Développeur Python
+						<br>- 2024
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Formation</h2>
+				<div class="content">
+					<p>Concepteur développeur d'application Python 
+						<br>Certification RNCP de niveau 6
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Compétences</h2>
+				<div class="content">
+					<p>Passionné par le développement et possédant une solide expérience dans ce domaine, je pense avoir les compétences nécessaires pour contribuer efficacement à votre équipe.
+						<br>
+						<br>
+						<b>Maîtrise de Python :</b> <br>J'ai développé de nombreuses applications en Python, en utilisant des frameworks comme Django, Flask et FastAPI.
+						<br>
+						<br>
+						<b>Conception d'architectures robustes :</b> <br>J'ai conçu des systèmes modulaires, évolutifs et maintenables, en appliquant les bonnes pratiques de programmation et les design patterns appropriés.
+						<br>
+						<br>
+						<b>Intégration et développement d'APIs :</b> <br>Je suis expérimenté dans la création et la gestion d'APIs RESTful, garantissant des performances optimales et une sécurité renforcée.
+						<br>
+						<br>
+						<b>Collaboration en équipe :</b> <br>Je travaille efficacement en équipe, notamment au sein de méthodologies agiles comme Scrum et Kanban, en utilisant des outils de gestion de projet tels que Jira ou Trello.
+						<br>
+						<br>
+						<b>Résolution de problèmes et optimisation :</b> <br>Je suis capable d'identifier et de résoudre des problèmes complexes, d'optimiser le code existant pour améliorer les performances et d'assurer une meilleure expérience utilisateur.</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
